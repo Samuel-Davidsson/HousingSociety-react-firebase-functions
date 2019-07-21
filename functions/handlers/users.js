@@ -64,17 +64,13 @@ exports.login = (req, res) => {
     password: req.body.password
   };
 
-  const { valid, errors } = validateLoginData(user);
-
-  if (!valid) return res.status(400).json(errors);
-
   firebase
     .auth()
     .signInWithEmailAndPassword(user.email, user.password)
-    .then((data) => {
+    .then(data => {
       return data.user.getIdToken();
     })
-    .then((token) => {
+    .then(token => {
       return res.json({ token });
     })
     .catch((err) => {

@@ -10,5 +10,6 @@ app.post("/post", FBAuth, addPost);
 
 app.post("/login", login);
 app.post("/signup", signup);
+// app.post("/user/image", FBAuth, uploadImage);
 
 exports.api = functions.region("europe-west1").https.onRequest(app);

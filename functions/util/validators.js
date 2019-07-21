@@ -29,12 +29,12 @@ const IsEmpty = (string) => {
     }
 }
 
-  exports.validateLoginData = (data) => {
-    if(IsEmpty(user.email)) errors.email = "Must not be empty";
-    if(IsEmpty(user.password)) errors.password = "Must not be empty";
+//   exports.validateLoginData = (data) => {
+//     if(IsEmpty(data.email)) errors.email = "Must not be empty";
+//     if(IsEmpty(data.password)) errors.password = "Must not be empty";
   
-    return {
-        errors,
-        valid: Object.keys(errors).length === 0 ? true : false 
-    }
-}
+//     return {
+//         errors,
+//         valid: Object.keys(errors).length === 0 ? true : false 
+//     }
+// }
