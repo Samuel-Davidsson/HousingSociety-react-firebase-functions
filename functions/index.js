@@ -3,9 +3,11 @@ const app = require("express")();
 
 const { db } = require("./util/admin");
 const FBAuth = require("./util/fbAuth");
+const cors = require("cors");
 const { getAllPosts, addPost, getPost, commentOnPost, likePost, unlikePost, deletePost } = require("./handlers/posts")
 const { signup, login, uploadImage, addUserDetails, getAuthenticatedUser, getUserDetails, markNotificationsRead } = require("./handlers/users");
 
+app.use(cors());
 app.get("/posts", getAllPosts);
 app.get("/post/:postId", getPost);
 app.get("/post/:postId/like", FBAuth, likePost);
